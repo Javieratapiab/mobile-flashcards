@@ -10,13 +10,8 @@ import DeckList from '../components/DecksList/index'
 import DeckDetails from '../components/DeckDetails/index'
 import NewDeck from '../components/NewDeck/index'
 import NewCard from '../components/Cards/New/index'
-
-// TODO: settings component to get a notification reminder
-const settings = () => (
-  <View>
-    <Text>Settings!</Text>
-  </View>
-);
+import Quiz from '../components/Quiz/index'
+import Reminder from '../components/Notifications/reminder'
 
 // Defines style for navigation tabs
 const NavigationStyle = Platform.OS === 'ios'
@@ -54,7 +49,7 @@ export const Tabs = NavigationStyle({
     }
   },
   Settings: {
-    screen: settings,
+    screen: Reminder,
     navigationOptions: {
       title: 'Settings',
       tabBarButtonComponent: TouchableEntity,
@@ -107,6 +102,26 @@ export const MainNavigator = createStackNavigator({
       },
       headerTintColor: $color4,
       title: 'New Card'
+    }
+  },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#000000",
+      },
+      headerTintColor: $color4,
+      title: 'Quiz'
+    }
+  },
+  Settings: {
+    screen: Reminder,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#000000",
+      },
+      headerTintColor: $color4,
+      title: 'Reminder notification'
     }
   }
 })

@@ -18,7 +18,7 @@ class DeckList extends Component {
 
   _fetchDecks() {
     this.setState({refreshing: true});
-    let bla = allDecks().then((results) => {
+    allDecks().then((results) => {
       let parsed = JSON.parse(results)
       this.setState({ refreshing: false })
       if (parsed) {

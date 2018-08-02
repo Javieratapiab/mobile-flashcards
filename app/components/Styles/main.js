@@ -1,7 +1,7 @@
 // Styles components
 import styled from 'styled-components/native'
 import { Platform } from 'react-native'
-import { $color5, $color4, $color1, $color2 } from '../../utils/colors'
+import { $color5, $color4, $color1, $color2, $color3 } from '../../utils/colors'
 
 export const StyledCard = styled.View`
   background-color: white;
@@ -32,7 +32,7 @@ export const TextCard = styled.Text`
   font-size: 18px;
 `
 export const TextSecondaryCard = styled.Text`
-  color: ${$color4};
+  color: ${$color3};
   font-size: 15px;
   font-weight: bold;
   text-align: center;
@@ -61,8 +61,19 @@ export const MainTitle = styled.Text`
 
 export const TextButton = styled.Text`
   text-align: center;
-  color: ${$color4};
+  color: ${$color2};
   padding: 20px;
   font-weight: bold;
+  font-size: 15px;
+`
+export const ActionButtons = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+`
+export const ScoreText = styled.Text`
+  align-self: center;
+  font-weight: bold;
+  padding: 20px;
   font-size: 15px;
 `

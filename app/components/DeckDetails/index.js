@@ -1,18 +1,9 @@
 import React, { Component } from 'react'
-import { $color5, $color4 } from '../../utils/colors'
-import { View,
-        Text,
-        Platform,
-        TouchableOpacity,
-        Button,
-      } from 'react-native'
+import { View, Text, TouchableOpacity, Button } from 'react-native'
 import { StyledCard,
-         MainView,
-         ButtonText,
          TextCard,
          TextSecondaryCard,
          ButtonsSection,
-         TouchableButtons,
          TextButton
         } from '../Styles/main'
 import NewCard from '../Cards/New/index'
@@ -31,7 +22,7 @@ class DeckDetails extends Component {
           <TouchableOpacity onPress={() => this.navigateTo('NewCard', deck)}>
             <TextButton>Add Card</TextButton>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.navigateTo('QuizDetail')}>
+          <TouchableOpacity onPress={() => this.navigateTo('Quiz', deck)}>
             <TextButton>Start Quiz</TextButton>
           </TouchableOpacity>
         </ButtonsSection>

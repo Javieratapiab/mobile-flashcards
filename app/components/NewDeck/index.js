@@ -6,8 +6,8 @@ import { Text, View,
 import { HeadingText, CustomTextInput,
          NewDeckSection, StyledCard,
          MainTitle, TextButton } from '../Styles/main'
-import { $color4 } from '../Styles/main'
-import { saveDeckTitle, DECKS } from '../../utils/storage'
+import { $color7 } from '../Styles/main'
+import { saveDeckTitle, allDecks } from '../../utils/storage'
 import { generateUUID } from '../../utils/helpers'
 
 class NewDeck extends Component {
@@ -19,22 +19,25 @@ class NewDeck extends Component {
     }
   }
 
-  // TODO: THIS CAN BE BETTER
   validateTitle() {
     Keyboard.dismiss()
+    if (this.state['title'] == '') {
+      return Alert.alert('Please, enter a valid deck title.')
+    }
+    this.createDeck()
+  }
+
+  createDeck() {
     const { navigate } = this.props.navigation
     let title = this.state['title']
-    if (title == '') { return Alert.alert('Please, enter a valid deck title') }
     let newDeck = {}
     newDeck[title] = { title: title, id: generateUUID() }
     saveDeckTitle(newDeck)
-    AsyncStorage.getItem(DECKS).then((results) => {
+    allDecks().then((results) => {
       let parsed = JSON.parse(results)
       if (parsed[title]) {
         this.setState({ title: '' })
         navigate('DeckDetails', { deck: parsed[title] })
-      } else {
-        return Alert.alert("Sorry!, we couldn't save your deck :(. Try it again!")
       }
     })
   }
@@ -52,7 +55,7 @@ class NewDeck extends Component {
             value={ title }
             style={{height: 40}}
             placeholder='i.e. Machine learning'
-            placeholderTextColor={ $color4 }
+            placeholderTextColor={ $color7 }
             autoFocus={true}
             accessible={false}
           >

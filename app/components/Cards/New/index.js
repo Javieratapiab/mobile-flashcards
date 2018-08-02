@@ -3,7 +3,7 @@ import { View, Text,
         TextInput, Alert,
         TouchableOpacity,
         AsyncStorage } from 'react-native'
-import { $color4 } from '../../../utils/colors'
+import { $color2, $color3, $color7 } from '../../../utils/colors'
 import { HeadingText, CustomTextInput,
         NewDeckSection, StyledCard,
         MainTitle, TextButton } from '../../Styles/main'
@@ -57,7 +57,7 @@ class NewCard extends Component {
             value={ question }
             style={{height: 40}}
             placeholder='i.e. What is Bayes’ Theorem?'
-            placeholderTextColor={$color4}
+            placeholderTextColor={$color7}
             autoFocus={true}
             accessible={false}
           >
@@ -72,7 +72,7 @@ class NewCard extends Component {
             style={{height: 40}}
             placeholder='i.e. Gives posterior probability
                         of an event given what is known as prior knowledge.'
-            placeholderTextColor={$color4}
+            placeholderTextColor={$color7}
             accessible={false}
           >
           </TextInput>
