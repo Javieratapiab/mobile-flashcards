@@ -6,7 +6,7 @@ import { Text, View,
 import { HeadingText, CustomTextInput,
          NewDeckSection, StyledCard,
          MainTitle, TextButton } from '../Styles/main'
-import { $color7 } from '../Styles/main'
+import { $color6 } from '../Styles/main'
 import { saveDeckTitle, allDecks } from '../../utils/storage'
 import { generateUUID } from '../../utils/helpers'
 
@@ -55,7 +55,7 @@ class NewDeck extends Component {
             value={ title }
             style={{height: 40}}
             placeholder='i.e. Machine learning'
-            placeholderTextColor={ $color7 }
+            placeholderTextColor={ $color6 }
             autoFocus={true}
             accessible={false}
           >
