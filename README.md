@@ -6,7 +6,7 @@ questions and answers that you can create.
 ## Stack
 
 This project is built in React Native using Asyncstorage as DB. For a better experience,
-run this project in a iOS simulator or mobile ##(Not tested on Android device)
+run this project in a iOS simulator or mobile. ## Not tested on Android device
 
 ## Tools
 
